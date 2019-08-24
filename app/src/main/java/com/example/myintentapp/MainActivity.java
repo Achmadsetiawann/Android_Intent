@@ -7,11 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/*
+
+                           move_activity.xml => MoveActivity.class
+Structure MainActivity =>  activity_move_with_data => MoveWithDataActivity.class
+
+
+*/
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     /* Deklarasi Layout activity_main name */
 
     Button btnMoveActivity;
+    Button btnMoveWithDataActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnMoveActivity = findViewById(R.id.btn_move_activity);
         btnMoveActivity.setOnClickListener(this);
+
+        btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
+        btnMoveWithDataActivity.setOnClickListener(this);
     }
 
     @Override
@@ -37,6 +49,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent moveIntent = new Intent(MainActivity.this, MoveActivity.class);
                 startActivity(moveIntent);
                 break;
+
+            case R.id.btn_move_activity_data:
+                Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithDataActivity.class);
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
+                startActivity(moveWithDataIntent);
+                break;
+
         }
     }
 
