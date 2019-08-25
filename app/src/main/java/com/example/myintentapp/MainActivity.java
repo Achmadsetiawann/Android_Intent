@@ -10,7 +10,8 @@ import android.widget.Button;
 /*
 
                            move_activity.xml => MoveActivity.class
-Structure MainActivity =>  activity_move_with_data => MoveWithDataActivity.class
+Structure MainActivity =>  activity_move_with_data.xml => MoveWithDataActivity.class
+                           activity_move_with_object.xml => Person.java => MoveWithObjectActivity.class
 
 
 */
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnMoveActivity;
     Button btnMoveWithDataActivity;
+    Button btnMoveWithObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
         btnMoveWithDataActivity.setOnClickListener(this);
+
+        btnMoveWithObject = findViewById(R.id.btn_move_activity_object);
+        btnMoveWithObject.setOnClickListener(this);
+
     }
 
     @Override
@@ -41,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             /*
-            Deklarasi R.id.move_activity sebagai key untuk pindah halaman class
-            dari MainActivity.class ke MoveActivity.class
+            Deklarasi R.id. sebagai key untuk pindah halaman class
+            dari MainActivity.class ke Another Class
             */
 
             case R.id.btn_move_activity:
@@ -55,6 +61,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
                 startActivity(moveWithDataIntent);
+                break;
+
+            case R.id.btn_move_activity_object:
+                Person person = new Person();
+                person.setName("DicodingAcademy");
+                person.setAge(5);
+                person.setEmail("academy@dicoding.com");
+                person.setCity("Bandung");
+                Intent moveWithObjectIntent = new Intent(MainActivity.this, MoveWithObjectActivity.class);
+                moveWithObjectIntent.putExtra(MoveWithObjectActivity.EXTRA_PERSON, person);
+                startActivity(moveWithObjectIntent);
                 break;
 
         }

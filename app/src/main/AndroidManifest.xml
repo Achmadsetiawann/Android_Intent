@@ -20,6 +20,7 @@
 
         <activity android:name=".MoveActivity" />
         <activity android:name=".MoveWithDataActivity" />
+        <activity android:name=".MoveWithObjectActivity" />
     </application>
 
 </manifest>
