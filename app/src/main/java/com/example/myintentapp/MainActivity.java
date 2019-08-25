@@ -10,13 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /*
-
                            move_activity.xml => MoveActivity.java
 Structure MainActivity =>  activity_move_with_data.xml => MoveWithDataActivity.java / Uri.parse("tel:"+phoneNumber)
                            activity_move_with_object.xml => Person.java => MoveWithObjectActivity.java
                            activity_move_with_for_result.xml => MoveForResultActivity.java
-
-
 */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
