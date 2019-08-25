@@ -21,6 +21,8 @@
         <activity android:name=".MoveActivity" />
         <activity android:name=".MoveWithDataActivity" />
         <activity android:name=".MoveWithObjectActivity" />
+        <activity android:name=".MoveForResultActivity" />
+
     </application>
 
 </manifest>
